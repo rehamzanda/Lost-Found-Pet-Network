@@ -6,13 +6,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          
+      
+      # Both steps now point to your 'frontend' folder
       - name: Install dependencies
-        run: cd frontend && npm ci  # Change 'frontend' to your subfolder name
-          
+        working-directory: './frontend'
+        run: npm ci
+      
       - name: Run tests
-        run: cd frontend && npm test
+        working-directory: './frontend'
+        run: npm test
