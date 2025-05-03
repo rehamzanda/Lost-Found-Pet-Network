@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.pet-details-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: linear-gradient(120deg, #d6dce2, #ffffff);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pet-details-container h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(120deg, #2c3e50, #3498db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.pet-details-container h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, #3498db, #2ecc71);
+  border-radius: 2px;
+}
+
+.pet-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.pet-details img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.pet-details img:hover {
+  transform: scale(1.02);
+}
+
+.pet-details h2 {
+  color: #34495e;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  background: linear-gradient(120deg, #34495e, #2980b9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pet-details p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  line-height: 1.6;background: linear-gradient(120deg, #f8f9fa, #e9ecef);
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size:1rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  padding-bottom: 15px;
+  background: linear-gradient(120deg, #2c3e50, #3498db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pet-details .info-section {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.pet-details .info-section p {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.pet-details .info-section p:last-child {
+  border-bottom: none;
+}
+
+.pet-details button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #3498db, #2ecc71);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+.pet-details button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+  background: linear-gradient(135deg, #2980b9, #27ae60);
+}
+
+@media (max-width: 768px) {
+  .pet-details-container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .pet-details {
+    grid-template-columns: 1fr;
+  }
+
+  .pet-details img {
+    height: 300px;
+  }
+
+  .pet-details h2 {
+    font-size: 1.8rem;
+  }
+
+  .pet-details p {
+    font-size: 1rem;
+  }
+}
