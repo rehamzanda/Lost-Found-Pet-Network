@@ -1,0 +1,199 @@
+/* Signup.css - Modern Blue/Green Theme */
+
+
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4f0f8 100%);
+    padding: 20px;
+  }
+  
+  .signup-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 82, 163, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 480px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .signup-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 82, 163, 0.15);
+  }
+  
+  .signup-title {
+    color: #0052a3; /* Deep blue */
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+  }
+  
+  .signup-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #00c6a7 0%, #0052a3 100%);
+    border-radius: 2px;
+  }
+  
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .form-group {
+    position: relative;
+  }
+  
+  .form-label {
+    display: block;
+    color: #4a5568;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #f8fafc;
+  }
+  
+  .form-input:focus {
+    border-color: #00c6a7;
+    box-shadow: 0 0 0 3px rgba(0, 198, 167, 0.2);
+    background-color: white;
+    outline: none;
+  }
+  
+  .form-input::placeholder {
+    color: #a0aec0;
+  }
+  
+  .signup-button {
+    background: linear-gradient(135deg, #00c6a7 0%, #0083b0 100%);
+    color: white;
+    border: none;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(0, 198, 167, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .signup-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(0, 198, 167, 0.3);
+  }
+  
+  .signup-button:active {
+    transform: translateY(0);
+  }
+  
+  .message-container {
+    margin-top: 24px;
+  }
+  
+  .error-message {
+    color: #e53e3e;
+    background-color: #fff5f5;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 4px solid #e53e3e;
+    font-size: 14px;
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  /* Enhanced Success Message */
+  .success-message {
+    background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+    border-left: 4px solid #38b2ac;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 25px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    animation: fadeIn 0.5s ease-in-out;
+    box-shadow: 0 4px 12px rgba(56, 178, 172, 0.1);
+  }
+  
+  .success-icon {
+    background: linear-gradient(135deg, #38b2ac 0%, #319795 100%);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+    font-size: 18px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .success-content h3 {
+    color: #2c7a7b;
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+  
+  .success-content p {
+    color: #4a5568;
+    margin-bottom: 15px;
+    font-size: 15px;
+  }
+  
+  .login-button {
+    display: inline-block;
+    background: #4299e1;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(66, 153, 225, 0.2);
+  }
+  
+  .login-button:hover {
+    background: #3182ce;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(66, 153, 225, 0.3);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Floating label animation (optional) */
+  .form-group.focused .form-label {
+    transform: translateY(-24px);
+    font-size: 12px;
+    color: #00c6a7;
+  }
