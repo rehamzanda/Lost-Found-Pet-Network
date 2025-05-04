@@ -12,7 +12,7 @@ export default function Login() {
         setErr('')
         setIsLoading(true);
         let data ={email,password}
-        axios.post('http://localhost:3000/login', data)
+        axios.post('http://localhost:2000/api/login', data)
         .then(result => {
             localStorage.setItem('token', result.data.token)
             window.location.href = "/"

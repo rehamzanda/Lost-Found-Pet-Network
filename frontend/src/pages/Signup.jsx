@@ -5,7 +5,7 @@ import './Signup.css';
 
 export default function Signup() {
     const [user, setUser] = useState({
-        username: '',
+        userName: '',
         email: '',
         phoneNumber: '',
         password: ''
@@ -26,11 +26,16 @@ export default function Signup() {
         setErr('');
         setSuccess('');
         
-        axios.post('http://localhost:3000/signup', user)
-            .then(result => {
-                setSuccess(result.data);
+        axios.post('http://localhost:2000/api/signup', user , {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          })
+            .then( result => {
+                setSuccess((result.data && result.data.message) ||
+                    ("Account Created successfully"));
                 setUser({
-                    username: '',
+                    userName: '',
                     email: '',
                     phoneNumber: '',
                     password: ''
@@ -48,12 +53,12 @@ export default function Signup() {
                 <h1 className="signup-title">Create Your Account</h1>
                 <form onSubmit={submitForm} className="signup-form">
                     <div className="form-group">
-                        <label className="form-label">Username</label>
+                        <label className="form-label">UserName</label>
                         <input
                             type="text"
-                            name="username"
+                            name="userName"
                             placeholder="Enter your username"
-                            value={user.username}
+                            value={user.userName}
                             onChange={handleChange}
                             className="form-input"
                             required
@@ -76,6 +81,7 @@ export default function Signup() {
                         <input
                             type="password"
                             name="password"
+                            autoComplete="new-password"
                             placeholder="Create a password"
                             value={user.password}
                             onChange={handleChange}
