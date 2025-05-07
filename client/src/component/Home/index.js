@@ -7,17 +7,19 @@ const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterType, setFilterType] = useState("All");
   const [statusFilter, setStatusFilter] = useState("All");
-  const [deleteId, setDeleteId] = useState(null);
+  const [deleteId, setDeleteId] = useState(true);
   const [reportedPets, setReportedPets] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch reported pets from the server
-    axios.get('/api/pets')
+    axios.get('http://localhost:5000/api/pets')
       .then(response => {
         setReportedPets(response.data);
+        setLoading(false);
       })
       .catch(error => {
-        console.error('There was an error fetching the pets!', error);
+        setError(error);
       });
   }, [deleteId]);
 
@@ -45,15 +47,18 @@ const Home = () => {
     console.log(`Show button clicked for pet with id: ${id}`);
   };
 
+  // Delete pet function
   const handleDelete = (id) => {
-    axios.delete(`/delete/${id}`)
-      .then(() => {
-        setDeleteId(id);
-        console.log(`Pet with id: ${id} deleted`);
-      })
-      .catch((error) => {
-        console.error('There was an error deleting the pet!', error);
-      });
+    if (window.confirm("Are you sure you want to delete this pet?")) {
+      axios.delete(`http://localhost:5000/api/pets/${id}`)  // Full correct path
+        .then(() => {
+          setDeleteId(reportedPets.filter(pet => pet._id !== id)); // Better state update
+        })
+        .catch(error => {
+          console.error("Error deleting pet:", error);
+          setError(error);
+        });
+    }
   };
 
   const filteredPets = reportedPets.filter((pet) => {
@@ -67,7 +72,7 @@ const Home = () => {
     <li className="reported-box" key={pet._id}>
       <div className="info-box">{pet.name}</div>
       <div className="box-img">
-        <img src={pet.image} alt={pet.name} />
+      <img src={`${pet.image}`} alt={pet.name} />
       </div>
       <div className="info-pet">
         <p>{pet.description}</p>
@@ -81,16 +86,14 @@ const Home = () => {
   ));
 
   return (
-    <div className="container">
-      <h1>Pets Home Page</h1>
-      <div className="report-btn">
-        <button onClick={() => handleReportButtonClick("Lost")}>
-          <Link to="/Lost">Report a Lost Pet</Link>
-        </button>
-        <button onClick={() => handleReportButtonClick("Found")}>
-          <Link to="/Found">Report a Found Pet</Link>
-        </button>
-      </div>
+    <div>
+      <div className="container">
+        <div className="header">
+          <h1 className="title">Pets Home Page</h1>
+          <button className="report-btn" onClick={() => handleReportButtonClick("Found")}>
+          <Link to="/Found">Report a Found or Lost Pet</Link>
+          </button>
+        </div>
       <div className="find-container">
         <div className="search-container">
           <h3>Find Pets</h3>
@@ -115,12 +118,21 @@ const Home = () => {
       </div>
       <div className="reported-container">
         <h2>Reported Pets</h2>
-        {filteredPets.length > 0 ? (
-          <ul>{PetList}</ul>
-        ) : (
-          <p>No pets match the current criteria.</p>
-        )}
+        {loading ? (
+        <div>Loading pets...</div>
+      ) : error ? (
+        <div className="error">Error: {error.message}</div>
+      ) : (
+        <div>
+          {filteredPets.length > 0 ? (
+            <ul>{PetList}</ul>
+          ) : (
+            <p>No pets match the current criteria.</p>
+          )}
+        </div>
+      )}
       </div>
+    </div>
     </div>
   );
 };

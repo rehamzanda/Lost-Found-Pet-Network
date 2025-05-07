@@ -7,6 +7,7 @@ import Index from './component/Index';
 import Lost from './component/Lost';
 import Found from './component/Found';
 import Show from './component/Show';
+import Edit from './component/Edit';
 
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
           <Route path="/Lost" element={<Lost />} />
           <Route path="/Found" element={<Found />} />
           <Route path="/Show/:id" element={<Show />} />
+          <Route path="/Edit/:id" element={<Edit />} />
         </Routes>
         </BrowserRouter>
         

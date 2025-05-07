@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const petSchemaValidation = Joi.object({
     name: Joi.string().required(),
     species: Joi.string().required(),
+    status: Joi.string().valid('Found', 'Lost', 'Other').default('Found'),
     age: Joi.number().required(),
     description: Joi.string().required(),
     image: Joi.string().optional(),
@@ -14,7 +15,6 @@ const petSchemaValidation = Joi.object({
     city: Joi.string().required(),
     state: Joi.string().required(),
     zip: Joi.string().required(),
-    status: Joi.string().valid('Found', 'Lost').default('Found'),
     type: Joi.string().valid('Pet', 'Owner').default('Pet')
 }).required();
 

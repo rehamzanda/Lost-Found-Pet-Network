@@ -46,6 +46,10 @@ p {
 
 input[type="text"],
 input[type="file"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+textarea,
 select {
   width: 100%;
   padding: 1rem;
@@ -62,8 +66,19 @@ select:hover {
   background-color: #ffffff;
 }
 
+input[type="number"]:hover {
+  border-color: #bdc3c7;
+  background-color: #ffffff;
+}
+
+textarea:hover {
+  border-color: #bdc3c7;
+  background-color: #ffffff;
+}
+
 input[type="text"]:focus,
-select:focus {
+select:focus,
+textarea:focus {
   outline: none;
   border-color: #3498db;
   box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
