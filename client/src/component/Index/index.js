@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> Feature-Kareem
 import Home from './../Home';
 import Footer from './../Footer';
 
