@@ -35,10 +35,9 @@ Lost and Found Pet Network is a web application designed to help communities qui
 
 - Frontend: React, Bootstrap, CSS  
 - Backend: Node.js, Express.js  
-- Database: MongoDB  
-- Image recognition: TensorFlow.js  
+- Database: MongoDB   
 - File Upload: Multer  
-- Others: Git, GitHub, Heroku (or your hosting platform)
+- Others: Git, GitHub
 
 ---
 
