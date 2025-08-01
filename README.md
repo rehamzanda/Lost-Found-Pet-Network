@@ -1,11 +1,6 @@
 
 # Lost and Found Pet Network 🐾
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/djnarawade/lost-and-found-pet-network)](https://github.com/djnarawade/lost-and-found-pet-network/issues)
-[![GitHub stars](https://img.shields.io/github/stars/djnarawade/lost-and-found-pet-network?style=social)](https://github.com/djnarawade/lost-and-found-pet-network/stargazers)
-
----
 
 ## Table of Contents
 
