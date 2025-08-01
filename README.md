@@ -8,6 +8,9 @@
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Usage](#usage)
+- [Installation](#installation)
+- [Contact](#contact)
+- [ProjectLink](#ProjectLink).
   
 
 ---
@@ -49,3 +52,40 @@ Lost and Found Pet Network is a web application designed to help communities qui
 -Click on posts for more information and contact details
 
 -Use delete option to remove your own posts
+
+
+
+## Installation
+
+1. Clone the repo  
+
+             git clone https://github.com/djnarawade/lost-and-found-pet-network.git
+
+
+2.Install dependencies
+   
+             cd lost-and-found-pet-network npm install
+
+3. Set up environment variables
+   Create a .env file and add necessary keys, e.g.:
+
+          MONGODB_URI=your_mongodb_connection_string
+          PORT=5000
+
+
+4. Run the application
+
+        npm run dev
+
+6. Open http://localhost:5000 to view in your browser.
+
+
+## Contact :
+
+1.Diksha Narawade – djnarawade.999@gmail.com
+LinkedIn: https://www.linkedin.com/in/dikshanarawade/
+
+
+
+## ProjectLink:
+https://github.com/djnarawade/lost-and-found-pet-network
