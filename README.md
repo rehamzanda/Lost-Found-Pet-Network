@@ -1,5 +1,4 @@
-//# Lost-Found-Pet-Network
-//it  is a web platform for reporting lost and found pets. Users can upload pet images, and TensorFlow.js is used for image matching to find potential matches. The platform includes authentication, pet //management, and search features to help reunite pets with their owners.
+
 # Lost and Found Pet Network 🐾
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -12,13 +11,9 @@
 
 - [About](#about)
 - [Features](#features)
-- [Demo](#demo)
 - [Technologies Used](#technologies-used)
-- [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+  
 
 ---
 
@@ -40,14 +35,6 @@ Lost and Found Pet Network is a web application designed to help communities qui
 
 ---
 
-## Demo
-
-Check out the live demo here: [https://your-demo-link.com](https://your-demo-link.com)  
-(Screenshot or GIF preview below)
-
-![App Preview](https://your-image-link.com/preview.png)
-
----
 
 ## Technologies Used
 
@@ -60,8 +47,8 @@ Check out the live demo here: [https://your-demo-link.com](https://your-demo-lin
 
 ---
 
-## Installation
-
-1. Clone the repo  
-```bash
-git clone https://github.com/djnarawade/lost-and-found-pet-network.git
+## Usage
+-Submit lost or found pet reports with details and images
+-Browse the list of reported pets on the homepage
+-Click on posts for more information and contact details
+-Use delete option to remove your own posts
