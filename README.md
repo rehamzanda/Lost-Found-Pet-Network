@@ -44,6 +44,9 @@ Lost and Found Pet Network is a web application designed to help communities qui
 
 ## Usage
 -Submit lost or found pet reports with details and images
+
 -Browse the list of reported pets on the homepage
+
 -Click on posts for more information and contact details
+
 -Use delete option to remove your own posts
